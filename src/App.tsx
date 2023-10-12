@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
+import NotFound from './pages/NotFound';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path={routes.contacts} element={<Contacts />} />
             <Route path={routes.about} element={<About />} />
+            <Route path='*' element={<NotFound />} />
         </Route>
     )
 )
