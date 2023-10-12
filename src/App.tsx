@@ -16,11 +16,11 @@ export const routes = {
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />} errorElement={<NotFound/>}>
             <Route index element={<Home />} />
             <Route path={routes.contacts} element={<Contacts />} />
             <Route path={routes.about} element={<About />} />
-            <Route path='*' element={<NotFound />} />
+            {/*<Route path='*' element={<NotFound />} />*/}
         </Route>
     )
 )
