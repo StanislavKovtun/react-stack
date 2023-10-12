@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
-import NotFound from './pages/NotFound';
+import ErrorPage from './pages/ErrorPage';
 
 import './App.css';
 
@@ -16,11 +16,11 @@ export const routes = {
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<Layout />} errorElement={<NotFound/>}>
+        <Route path="/" element={<Layout />} errorElement={<ErrorPage/>}>
             <Route index element={<Home />} />
             <Route path={routes.contacts} element={<Contacts />} />
             <Route path={routes.about} element={<About />} />
-            {/*<Route path='*' element={<NotFound />} />*/}
+            {/*<Route path='*' element={<ErrorPage />} />*/}
         </Route>
     )
 )
