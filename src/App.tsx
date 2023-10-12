@@ -7,12 +7,18 @@ import Contacts from './pages/Contacts';
 
 import './App.css';
 
+export const routes = {
+    home: 'home',
+    about: 'about',
+    contacts: 'contacts',
+}
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="contacts" element={<Contacts />} />
-            <Route path="about" element={<About />} />
+            <Route path={routes.contacts} element={<Contacts />} />
+            <Route path={routes.about} element={<About />} />
         </Route>
     )
 )
