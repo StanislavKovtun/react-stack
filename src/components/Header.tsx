@@ -12,7 +12,7 @@ const Header = () => {
 
     const [current, setCurrent] = useState(currentRoute);
     const onClick = (e: { key: SetStateAction<string> }) => {
-        console.log('click ', e);
+        //console.log('click ', e);
         setCurrent(e.key);
     };
 
