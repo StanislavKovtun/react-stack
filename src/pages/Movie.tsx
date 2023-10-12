@@ -1,20 +1,19 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { fetchMovieById } from "../api/fetchMovieById";
 
 function Movie() {
 
     const { movieId } = useParams();
     console.log('### movieId', movieId);
-
-    //const {name, duration, id} = useLoaderData();
-    const { name, duration } = useLoaderData(); //TODO: need to study!
-    //useLoaderData() - get data from this component or from first parent component
-
+    const movie = fetchMovieById(movieId);
+    console.log('### movie', movie);
+        
     return (
         <>
             <h1>Movie</h1>
             <p>ID: {movieId}</p>
-            <p>Name: {name}</p>
-            <p>Duration: {duration}</p>
+            <p>Name: {movie.name}</p>
+            <p>Duration: {movie.duration}</p>
         </>
     )
 }

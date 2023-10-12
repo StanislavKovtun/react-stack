@@ -7,7 +7,7 @@ import Contacts from './pages/Contacts';
 import Movies from './pages/Movies';
 import Movie from './pages/Movie';
 import ErrorPage from './pages/ErrorPage';
-import fetchMovie from './api/fetchMovie';
+import fetchAllMovies from './api/fetchAllMovies';
 
 import './App.css';
 
@@ -24,8 +24,8 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path={routes.contacts} element={<Contacts />} />
             <Route path={routes.about} element={<About />} />
-            <Route path={routes.movies} element={<Movies />} />
-            <Route path={`/${routes.movies}/:movieId`} element={<Movie />} loader={fetchMovie}/>
+            <Route path={routes.movies} element={<Movies />} loader={fetchAllMovies}/>
+            <Route path={`/${routes.movies}/:movieId`} element={<Movie />}/>
             {/*<Route path='*' element={<ErrorPage />} />*/}
         </Route>
     )
