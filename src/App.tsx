@@ -1,95 +1,24 @@
-//import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+//import Header from './components/Header';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contacts from './pages/Contacts';
 
-//import Main from './pages/Main'
-//import Contacts from './pages/Contacts'
-//import './App.css'
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="about" element={<About />} />
+        </Route>
+    )
+)
 
-//function App() {
-//  return (
-//    <BrowserRouter>
-//      <Routes>
-//        <Route path="*" element={<Main />} />
-//        <Route path="contacts" element={<Contacts />} />
-//      </Routes>
-//    </BrowserRouter>
-//  );
-//}
-
-//export default App;
-
-
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
-import { SetStateAction, useState } from 'react';
-
-const items = [
-  {
-    label: 'Navigation One',
-    key: 'mail',
-    icon: <MailOutlined />,
-  },
-  {
-    label: 'Navigation Two',
-    key: 'app',
-    icon: <AppstoreOutlined />,
-    //disabled: true,
-  },
-  {
-    label: 'Navigation Three - Submenu',
-    key: 'SubMenu',
-    icon: <SettingOutlined />,
-    children: [
-      {
-        type: 'group',
-        label: 'Item 1',
-        children: [
-          {
-            label: 'Option 1',
-            key: 'setting:1',
-          },
-          {
-            label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
-      },
-      {
-        type: 'group',
-        label: 'Item 2',
-        children: [
-          {
-            label: 'Option 3',
-            key: 'setting:3',
-          },
-          {
-            label: 'Option 4',
-            key: 'setting:4',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-        Navigation Four - Link
-      </a>
-    ),
-    key: 'alipay',
-  },
-];
-
-const App = () => {
-
-  const [current, setCurrent] = useState('mail');
-
-  const onClick = (e: { key: SetStateAction<string> }) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-  };
-
-  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
-
-};
+function App() {
+    return (
+        <RouterProvider router={router} />
+    );
+}
 
 export default App;
