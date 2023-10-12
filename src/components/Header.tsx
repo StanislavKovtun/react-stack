@@ -1,5 +1,5 @@
 
-import { HomeTwoTone, SmileOutlined, ContactsOutlined } from '@ant-design/icons';
+import { HomeTwoTone, SmileOutlined, ContactsOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import { SetStateAction, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -26,6 +26,11 @@ const Header = () => {
             label: <Link to={routes.about}>About</Link>,
             icon: <SmileOutlined />,
             key: routes.about
+        },
+        {
+            label: <Link to={routes.movies}>Movies</Link>,
+            icon: <VideoCameraOutlined />,
+            key: routes.movies
         },
         {
             label: <Link to={routes.contacts}>Contacts</Link>,
