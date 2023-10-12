@@ -4,9 +4,10 @@ import { fetchMovieById } from "../api/fetchMovieById";
 function Movie() {
 
     const { movieId } = useParams();
-    console.log('### movieId', movieId);
+    //console.log('### movieId', movieId);
+    // TODO: type?
     const movie = fetchMovieById(movieId);
-    console.log('### movie', movie);
+    //console.log('### movie', movie);
         
     return (
         <>

@@ -1,6 +1,7 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 
 import Header from "./Header"
+import Loader from './Loader';
 
 const Layout = () => {
 
@@ -18,8 +19,7 @@ const Layout = () => {
         <>
             <>
                 <Header />
-                {state === 'loading' ? <div>Loading...</div> : null}
-                {/*<p>{state}</p>*/}
+                {state === 'loading' ? <Loader /> : null}
                 <Outlet />
                 {/*{children} // TODO: add children? */}
             </>
