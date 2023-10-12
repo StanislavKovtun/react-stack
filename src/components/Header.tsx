@@ -1,6 +1,6 @@
 
 import { HomeTwoTone, SmileOutlined, ContactsOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { Menu, MenuProps } from 'antd';
 import { SetStateAction, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { routes } from '../App';
@@ -16,19 +16,27 @@ const Header = () => {
         setCurrent(e.key);
     };
 
+    const items: MenuProps['items'] = [
+        {
+            label: <Link to="/">Home</Link>,
+            icon: <HomeTwoTone />,
+            key: routes.home
+        },
+        {
+            label: <Link to={routes.about}>About</Link>,
+            icon: <SmileOutlined />,
+            key: routes.about
+        },
+        {
+            label: <Link to={routes.contacts}>Contacts</Link>,
+            icon: <ContactsOutlined />,
+            key: routes.contacts
+        },
+    ];
+
     return (
         <nav>
-            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal">
-                <Menu.Item key={routes.home} icon={<HomeTwoTone />}>
-                    <Link to="/">Home</Link>
-                </Menu.Item>
-                <Menu.Item key={routes.about} icon={<SmileOutlined />}>
-                    <Link to={`/${routes.about}`}>About</Link>
-                </Menu.Item>
-                <Menu.Item key={routes.contacts} icon={<ContactsOutlined />}>
-                    <Link to={`${routes.contacts}`}>Contacts</Link>
-                </Menu.Item>
-            </Menu>
+            <Menu items={items} onClick={onClick} selectedKeys={[current]} mode="horizontal" theme="light" />
         </nav>
     )
 };
