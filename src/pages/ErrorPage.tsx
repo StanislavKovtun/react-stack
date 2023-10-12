@@ -3,6 +3,7 @@ import { useRouteError } from "react-router-dom";
 
 function ErrorPage(): React.JSX.Element {
     const error: any = useRouteError(); //TODO: type?
+    // TODO: add children?
     return (
         <>
             <h1>Oops!</h1>

@@ -5,7 +5,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import Movies from './pages/Movies';
+import Movie from './pages/Movie';
 import ErrorPage from './pages/ErrorPage';
+import fetchMovie from './api/fetchMovie';
 
 import './App.css';
 
@@ -23,6 +25,7 @@ const router = createBrowserRouter(
             <Route path={routes.contacts} element={<Contacts />} />
             <Route path={routes.about} element={<About />} />
             <Route path={routes.movies} element={<Movies />} />
+            <Route path={`/${routes.movies}/:movieId`} element={<Movie />} loader={fetchMovie}/>
             {/*<Route path='*' element={<ErrorPage />} />*/}
         </Route>
     )
@@ -30,7 +33,8 @@ const router = createBrowserRouter(
 
 function App() {
     return (
-        <RouterProvider router={router} />
+        <RouterProvider router={router} fallbackElement={<>LOADING...</>} />
+        //<RouterProvider router={router} />
     );
 }
 
