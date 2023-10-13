@@ -15,8 +15,8 @@ function Movies() {
     return (
         <>
             {/*{state === 'loading' ? <div>Loading...</div> : null}*/}
-            <h1>Movies</h1>
-            <ul>
+            <h1 className='p-2'>Movies</h1>
+            <ul className="w-4 my-10">
                 {movies.map((movie) =>
                     <li key={movie.id}>{movie.name + '. '}
                         <NavLink to={`/movies/${movie.id}`}>Show detail {state}</NavLink>

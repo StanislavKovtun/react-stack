@@ -25,3 +25,15 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Kovtun S. Extra settings for Vite:
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+or full commands:
+
+npm create vite@latest my-project -- --template react
+cd my-project
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
