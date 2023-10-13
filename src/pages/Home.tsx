@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <h1>Home</h1>
-            <div>
+            <div className={styles.container}>
                 <a href="https://vitejs.dev" target="_blank">
                     <img src={viteLogo} className={styles.logo} alt="Vite logo" />
                 </a>
