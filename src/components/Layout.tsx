@@ -14,15 +14,16 @@ const Layout = () => {
     //Cannot read properties of null (reading 'toString')
 
     const { state } = useNavigation();
-
+    const isLoading = state === 'loading';
+    
     return (
         <>
-            <>
+            <div className=''>
                 <Header />
-                {state === 'loading' ? <Loader /> : null}
+                {isLoading ? <Loader /> : null}
                 <Outlet />
                 {/*{children} // TODO: add children? */}
-            </>
+            </div>
         </>
     )
 };

@@ -7,6 +7,7 @@ import Contacts from './pages/Contacts';
 import Movies from './pages/Movies';
 import Movie from './pages/Movie';
 import ErrorPage from './pages/ErrorPage';
+import Loader from './components/Loader';
 import fetchAllMovies from './api/fetchAllMovies';
 
 import './App.css';
@@ -33,7 +34,7 @@ const router = createBrowserRouter(
 
 function App() {
     return (
-        <RouterProvider router={router} fallbackElement={<>LOADING...</>} />
+        <RouterProvider router={router} fallbackElement={<Loader/>} />
         //<RouterProvider router={router} />
     );
 }
